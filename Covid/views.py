@@ -19,9 +19,15 @@ def contact_page(request):
     return render(request, "contact.html", {"title": "contact us"})
 
 
+def instructions(request):
+    return render(request, "instructions.html", {"title": "contact us"})
+
+def menu(request):
+    return render(request,"menu.html", {"asd":"asd"})
+
 def example_page(request):
-    context = {"title": "Example"}
+    context       = {"title":"Example"}
     template_name = "hello_world.html"
-    template_obj = get_template(template_name)
+    template_obj  = get_template(template_name)
     rendered_item = template_obj.render(template_name)
-    return HttpResponse(rendered_item)  # render(request,"hello_world.html",{"title": "contact us"})
+    return HttpResponse(rendered_item) #render(request,"hello_world.html",{"title": "contact us"})
