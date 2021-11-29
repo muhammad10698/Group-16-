@@ -2,7 +2,23 @@
 
 {% block content %}
 
+
 {{ title }}
+<head>
+	<style>
+	<p>
+	</p>
+	div{
+	width :20%;
+	height: 30px;
+	border : 1px solid black;
+	}
+	</style>
+</head>
+<br/></br>
+<a href="contact.html"> <button type="button">Contact Us</button> </a>
+
+	<br/></br>
 
 {{ request.user }}
 
@@ -12,10 +28,10 @@
 
 {{ user.is_authenticated }}
 
-
  {% for a in my_list %}
         <li>{{ a }}</li>
+
  {% endfor %}
 
 
- {% endblock %}
+{% endblock %}
