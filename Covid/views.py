@@ -18,6 +18,9 @@ def about_page(request):
 def contact_page(request):
     return render(request, "hello_world.html", {"title": "contact us"})
 
+def rules_page(request):
+    return render(request, "rules.html", {"title": "הנחיות ממשרד בריאות"})
+
 
 def example_page(request):
     context = {"title": "Example"}
