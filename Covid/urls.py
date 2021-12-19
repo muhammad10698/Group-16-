@@ -38,7 +38,7 @@ from.views import (
 )
 
 urlpatterns = [
-    path('', home_page),
+    path('', home_page,name='home'),
     path('blog/', blog_post_list_view),
     path('blog/<str:slug>/', blog_post_detail_view),
     path('about', about_page,name='about'),

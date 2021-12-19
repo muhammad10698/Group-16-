@@ -1,14 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
-
+from blog.models import BlogPost
 
 def home_page(request):
-    my_title = "Hello there...."
-    context = {"title": "my_title"}
-    if request.user.is_authenticated:
-        context = {"title": my_title, "my_list": [1, 2, 3, 4, 5]}
-    return render(request, "home.html", context)
+    blogs = BlogPost.objects.all();
+
+    return render(request, "home.html", {'blogs':blogs})
 
 
 def about_page(request):
