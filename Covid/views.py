@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
 from blog.models import BlogPost
+from blog.views import blog_post_detail_view
 
 def home_page(request):
     blogs = BlogPost.objects.all();
@@ -22,6 +23,20 @@ def instructions(request):
 
 def menu(request):
     return render(request,"menu.html", {"asd":"asd"})
+
+
+def HealthAndCare(request):
+    return render(request, "HealthAndCare.html", {"title": "HealthAndCare"})
+
+
+def Markets(request):
+    return render(request, "Markets.html", {"title": "Markets"})
+
+
+def Restaurants(request):
+    blogs = BlogPost.objects.all();
+    return render(request, "Restaurants.html", {'blogs':blogs})
+
 
 def example_page(request):
     context       = {"title":"Example"}

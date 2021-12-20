@@ -32,8 +32,10 @@ from.views import (
  contact_page,
  example_page,
  instructions,
-
  menu,
+ HealthAndCare,
+ Markets,
+ Restaurants
 
 )
 
@@ -46,5 +48,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('instructions',instructions,name ='ins'),
     path('menu', menu,name='menu'),
+    path('HealthAndCare', HealthAndCare,name='HealthAndCare'),
+    path('Markets', Markets,name='Markets'),
+    path('Restaurants', Restaurants,name='Restaurants'),
+
+
+
 
 ]
