@@ -27,6 +27,7 @@
         <li><a href="{% url 'about' %}"> about </a></li>
         <li><a href="{% url 'contact' %}"> contact us </a></li>
         <li><a href="{% url 'menu' %}"> menu </a></li>
+        <li><a style="float:right;" href="{% url 'logout' %}" > Logout</a></li>
         
       </ul>
     </div>
@@ -38,8 +39,12 @@
     <button class="w3-bar-item w3-button w3-large"
     onclick="w3_close()">Close &times;</button>
     <li><a href="{% url 'Restaurants' %}"> Restaurants</a></li>
+
     <li><a href="{% url 'HealthAndCare' %}"> Health&Care</a></li>
+
     <li><a href="{% url 'Markets' %}"> Markets</a></li>
+
+
 
   </div>
 
@@ -58,6 +63,8 @@
         document.getElementById("mySidebar").style.display = "none";
     }
     </script>
+
+  
 
 </body>
 </html>

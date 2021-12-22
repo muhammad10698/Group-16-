@@ -25,6 +25,9 @@ from blog.views import (
     blog_post_list_view,
     blog_post_update_view,
     blog_post_delete_view,
+    Register,
+    loginpage,
+    logoutpage
 )
 from.views import (
  home_page,
@@ -43,7 +46,7 @@ urlpatterns = [
     path('', home_page,name='home'),
     path('blog/', blog_post_list_view),
     path('blog/<str:slug>/', blog_post_detail_view),
-    path('about', about_page,name='about'),
+    path('about/', about_page,name='about'),
     path('contact/', contact_page,name='contact'),
     path('admin/', admin.site.urls),
     path('instructions',instructions,name ='ins'),
@@ -51,6 +54,9 @@ urlpatterns = [
     path('HealthAndCare', HealthAndCare,name='HealthAndCare'),
     path('Markets', Markets,name='Markets'),
     path('Restaurants', Restaurants,name='Restaurants'),
+    path('register/', Register , name='Register'),
+    path('login/', loginpage , name='loginpage'),
+    path('logout/', logoutpage , name='logout'),
 
 
 

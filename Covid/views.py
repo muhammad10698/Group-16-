@@ -26,11 +26,15 @@ def menu(request):
 
 
 def HealthAndCare(request):
-    return render(request, "HealthAndCare.html", {"title": "HealthAndCare"})
+    blogs = BlogPost.objects.all
+    
+    return render(request, "HealthAndCare.html", {'blogs': blogs})
 
 
 def Markets(request):
-    return render(request, "Markets.html", {"title": "Markets"})
+    blogs = BlogPost.objects.all();
+
+    return render(request, "Markets.html",{'blogs':blogs})
 
 
 def Restaurants(request):
@@ -44,3 +48,4 @@ def example_page(request):
     template_obj  = get_template(template_name)
     rendered_item = template_obj.render(template_name)
     return HttpResponse(rendered_item) #render(request,"hello_world.html",{"title": "contact us"})
+
