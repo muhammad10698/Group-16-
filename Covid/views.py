@@ -49,3 +49,4 @@ def example_page(request):
     rendered_item = template_obj.render(template_name)
     return HttpResponse(rendered_item) #render(request,"hello_world.html",{"title": "contact us"})
 
+

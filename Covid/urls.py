@@ -43,18 +43,18 @@ from.views import (
 )
 
 urlpatterns = [
+    path('register/', Register , name='Register'),
+    path('admin/', admin.site.urls),
     path('', home_page,name='home'),
     path('blog/', blog_post_list_view),
     path('blog/<str:slug>/', blog_post_detail_view),
     path('about/', about_page,name='about'),
     path('contact/', contact_page,name='contact'),
-    path('admin/', admin.site.urls),
     path('instructions',instructions,name ='ins'),
     path('menu', menu,name='menu'),
     path('HealthAndCare', HealthAndCare,name='HealthAndCare'),
     path('Markets', Markets,name='Markets'),
     path('Restaurants', Restaurants,name='Restaurants'),
-    path('register/', Register , name='Register'),
     path('login/', loginpage , name='loginpage'),
     path('logout/', logoutpage , name='logout'),
 
