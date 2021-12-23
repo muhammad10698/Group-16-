@@ -1,6 +1,6 @@
 <head>
   {% extends "base.html" %}
-  {% block title %} About Us {% endblock %}
+  
   {% block style %}
   {% load static %}
 
@@ -8,9 +8,9 @@
       body{
         font-family: Arial, Helvetica, sans-serif;
         margin: 2;
-        background-color: #C0C0C0;
+        background-color: #808080;
 
-      }
+    }
 
       html{
         box-sizing: border-box;
@@ -29,9 +29,18 @@
       }
 
       .card{
+        background:#F5F5F5;
+
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        margin: 20px;
+        margin: 5px;
       }
+      
+      .card:hover {
+        background:#D2B48C;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      margin: 10 auto;
+    }
+
 
       about-section{
         padding: 50px;
@@ -68,13 +77,20 @@
     </style>
   {% endblock %}
   {% block content %}
+  <h1>About Us</h1>
+  <h2 style="text-align:center">
     <div class="about-section">
-        <h1>About Us Page</h1>
-        <p>Some text about who we are and what we do.</p>
-        <p>Resize the browser window to see that this page is responsive by the way.</p>
+          <p>  𝒘𝒆 𝒂𝒓𝒆 𝒕𝒉𝒆 𝒇𝒐𝒖𝒏𝒅𝒆𝒓𝒔 𝒐𝒇 𝒕𝒉𝒊𝒔 𝒑𝒓𝒐𝒋𝒆𝒄𝒕</p>
+          <p>  𝟏) 𝑨𝒓𝒘𝒂 𝑨𝒃𝒖 𝑺𝒉𝒂𝒉</p>
+          <p>  𝟐)𝑺𝒂𝒇𝒂𝒂 𝑮𝒉𝒂𝒏𝒂𝒎𝒊</p>
+          <p>  𝟑)𝒎𝒖𝒉𝒂𝒎𝒎𝒂𝒅 𝑨𝒃𝒖 𝑨𝒔𝒃𝒊</p>
+          <p>  𝒕𝒉𝒆 𝒊𝒅𝒆𝒂 𝒐𝒇 𝒕𝒉𝒊𝒔 𝒑𝒓𝒐𝒋𝒆𝒄𝒕 𝒊𝒔:</p> 
+          <p>  𝒕𝒐 𝒍𝒆𝒕 𝒕𝒉𝒆 𝒅𝒐 𝒕𝒉𝒆𝒊𝒓 𝒂𝒄𝒕𝒊𝒗𝒆𝒕𝒊𝒆𝒔 𝒃𝒚 𝒔𝒉𝒐𝒘𝒊𝒏𝒈 𝒕𝒉𝒊𝒎 𝒑𝒍𝒂𝒄𝒆𝒔</p>
+          <p>  𝒘𝒊𝒕𝒉 𝒍𝒆𝒔𝒔 𝒑𝒐𝒑𝒖𝒍𝒂𝒕𝒊𝒐𝒏 𝒔𝒐 𝒕𝒉𝒆𝒚 𝒄𝒂𝒏 𝒔𝒕𝒂𝒚 𝒊𝒏 𝒕𝒉𝒆 𝒔𝒂𝒇𝒆 𝒔𝒊𝒅𝒆.</p>
+        </h2>
       </div>
       
-      <h2 style="text-align:center">Our Team</h2>
+      <h2 style="text-align:center">🅾🆄🆁 🆃🅴🅰🅼</h2>
       <div class="row">
         <div class="column">
           <div class="card">
@@ -82,7 +98,6 @@
             <div class="container">
               <h2>Arwa Abu Shah</h2>
               <p class="title">Software Engineering Studen</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
             </div>
           </div>
         </div>
@@ -93,18 +108,16 @@
             <div class="container">
               <h2>Safaa Ghanami</h2>
               <p class="title">Software Engineering Studen</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
             </div>
           </div>
         </div>
         
         <div class="column">
           <div class="card">
-            <img src="{{'./static/images/prsn.jpg'}}">
+            <img src="{% static 'images/prsn.jpg' %}">
             <div class="container">
               <h2>Muhammad Abu Asbi</h2>
               <p class="title">Software Engineering Studen</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
             </div>
           </div>
         </div>
