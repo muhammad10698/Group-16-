@@ -8,7 +8,6 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
 
-
 def blog_post_list_view(request):
     qs = BlogPost.objects.all() # queryset-> list of python object
     template_name = 'blog_post_list.html'  # list out objects , could be search
@@ -80,3 +79,4 @@ def loginpage(request):
 def logoutpage(request):
     logout(request)
     return redirect('loginpage') 
+
