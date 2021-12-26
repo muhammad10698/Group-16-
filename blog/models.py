@@ -13,6 +13,5 @@ class BlogPost(models.Model):
     image = models.ImageField(upload_to="./static/images/",null=True,max_length=150)
 
 
-
 class user(User):
     pass
