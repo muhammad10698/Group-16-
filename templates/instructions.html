@@ -2,9 +2,34 @@
 
 
 {% block title %} <center><b> Instructions From The Health Ministry</b> </center> {% endblock %}
+{% block style %}
+
+
+  <style>
+
+ .style{
+       position: absolute;
+       top: 27%;
+       left: 5%;
+       width: 90%;
+       border: 2px  solid grey;
+       border-radius: 8px;
+       padding: 5px;
+       box-shadow: 10px 10px 5px #aaaaaa;
+       background-color: light grey;
+
+
+      }
+
+
+
+  </style>
+{% endblock %}
+
+
 {% block content %}
 
-
+<div class="style">
 <h3> Green Pass Compliant Facilities: </h3>
 <ul>
   <li>Culture and sporting events, including marathons. If a seated sports event, and no more than 50 people indoors or 1000 people outdoors - no green pass required</li>
@@ -29,9 +54,7 @@
 </ul>
 
 
-
+</div>
 
 
 {% endblock %}
-
-
