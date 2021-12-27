@@ -21,6 +21,15 @@ def contact_page(request):
 def instructions(request):
     return render(request, "instructions.html", {"title": "contact us"})
 
+
+def adminpage(request):
+    return render(request,"adminpage.html", {"title": "contact us"})
+
+
+def adminprofile(request):
+    return render(request,"adminprofile.html", {"title": "contact us"})
+
+
 def menu(request):
     return render(request,"menu.html", {"asd":"asd"})
 
