@@ -21,6 +21,15 @@ def contact_page(request):
 def instructions(request):
     return render(request, "instructions.html", {"title": "contact us"})
 
+
+def adminpage(request):
+    return render(request,"adminpage.html", {"title": "contact us"})
+
+
+def adminprofile(request):
+    return render(request,"adminprofile.html", {"title": "contact us"})
+
+
 def menu(request):
     return render(request,"menu.html", {"asd":"asd"})
 
@@ -48,4 +57,5 @@ def example_page(request):
     template_obj  = get_template(template_name)
     rendered_item = template_obj.render(template_name)
     return HttpResponse(rendered_item) #render(request,"hello_world.html",{"title": "contact us"})
+
 
