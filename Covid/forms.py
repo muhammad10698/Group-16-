@@ -3,6 +3,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from blog.models import user
 from django.forms import PasswordInput,SelectMultiple
+from django.template.defaultfilters import slugify
+
+
+
 
 
 class RegisterForm(UserCreationForm):
@@ -20,3 +24,6 @@ class RegisterForm(UserCreationForm):
             'email': forms.TextInput(attrs={'class': 'form-control input-text','placeholder': 'Email Address'}),
             'username': forms.TextInput(attrs={'class': 'form-control input-text','placeholder': 'Username'}),
         }
+
+
+
