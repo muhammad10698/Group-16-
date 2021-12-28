@@ -7,8 +7,6 @@ from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
-from django.http import JsonResponse
-
 
 def blog_post_list_view(request):
     qs = BlogPost.objects.all() # queryset-> list of python object
