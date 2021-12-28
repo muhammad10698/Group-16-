@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
+from django.db.models.fields import EmailField, TextField
+from django.db import models
 
 
 class BlogPost(models.Model):
+    # palceId = models.CharField(max_length = 100)
     title = models.TextField()
     content = models.TextField(null=True, blank=True)
     capacity = models.IntegerField(null=True,default=0)
@@ -15,3 +17,5 @@ class BlogPost(models.Model):
 
 class user(User):
     pass
+
+

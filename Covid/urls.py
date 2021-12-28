@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
 
-from .views import home_page
+from .views import decrease, home_page, increase
 from django.contrib import admin
 from django.urls import path, re_path
 from blog.views import (
@@ -41,12 +42,11 @@ from.views import (
  menu,
  HealthAndCare,
  Markets,
- Restaurants
+ Restaurants,
 
 )
 
 urlpatterns = [
-    path('register/', Register , name='Register'),
     path('admin/', admin.site.urls),
     path('', home_page,name='home'),
     path('blog/', blog_post_list_view),
@@ -60,10 +60,12 @@ urlpatterns = [
     path('HealthAndCare', HealthAndCare,name='HealthAndCare'),
     path('Markets', Markets,name='Markets'),
     path('Restaurants', Restaurants,name='Restaurants'),
+    path('register/', Register , name='Register'),
     path('login/', loginpage , name='loginpage'),
     path('logout/', logoutpage , name='logout'),
+    path('increase/<int:blogId>/<int:pop>', increase , name='increase'),
+    path('decrease/<int:blogId>/<int:pop>', decrease , name='decrease'),
 
-
-
-
+    # path('increase',increase, name='increase'),
+    path('decrease',decrease, name='decrease')
 ]
