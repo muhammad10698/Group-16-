@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<center> <b>Admin's sign in</b></center> {% endblock %}
+{% block style %}
+
+
+  <style>
+ .center{
+          position: absolute;
+         top: 30%;
+         left: 40%;
+         width: 20%;
+
+      }
+
+
+
+  </style>
+{% endblock %}
+{% block content %}
+     <div class="center">
+         <form action="admin_signin" method="POST">
+             {% csrf_token %}
+             <label >Username </label>
+             <br>
+             <input type="text" id="username" placeholder="Enter Username" class="form-control"  Required>
+             <br>
+             <br>
+             <label >Password </label>
+             <br>
+             <input type="password" id="password" name="password" placeholder="Enter Your Password" class="form-control"  Required>
+             <br>
+             <br>
+
+             <button type="submit" class="btn btn-black"> Sign in</button>
+
+         </form>
+
+
+  </div>
+{% endblock %}

@@ -90,13 +90,19 @@
                 <span>Population : </span><h3><b>{{blog.population}}</b></h3> 
                 <span>Address : </span><h3><b>{{blog.address}}</b></h3> 
                 <span>type : </span><h3><b>{{blog.type}}</b></h3> 
+                {% comment %} <span>type : </span><h3><b>{{blog.}}</b></h3>  {% endcomment %}
                 
             </div>
             
+            {% comment %} <form METHOD="POST" action="."> {% endcomment %}
                 <div>
                     <a style="font-size: 15px;" href="{% url 'increase' blog.id blog.population  %}" ><button class="btn btn-primary">invitation</button></a>
                     <a style="font-size: 15px;" href="{% url 'decrease' blog.id blog.population  %}" ><button class="btn btn-danger">cancel invitation</button></a>
+                    {% comment %} <button type="submit" class="btn btn-primary">Invitation Request</button>  {% endcomment %}
                 </div>
+            {% comment %} </form> {% endcomment %}
+            {% comment %} <button type="blog.population" class="btn btn-danger">Cancel Invitation</button> {% endcomment %}
+            <button type="profile"class="s0howmore">view more</button>
 
         </div>
         {% endfor %}

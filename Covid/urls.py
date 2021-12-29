@@ -28,7 +28,8 @@ from blog.views import (
     blog_post_delete_view,
     Register,
     loginpage,
-    logoutpage
+    logoutpage,
+    admin_signin
 )
 from.views import (
  home_page,
@@ -36,11 +37,12 @@ from.views import (
  contact_page,
  example_page,
  instructions,
+ adminpage,
+ adminprofile,
  menu,
  HealthAndCare,
  Markets,
  Restaurants,
- To_Use,
 
 )
 
@@ -51,7 +53,9 @@ urlpatterns = [
     path('blog/<str:slug>/', blog_post_detail_view),
     path('about/', about_page,name='about'),
     path('contact/', contact_page,name='contact'),
-    path('instructions',instructions,name ='ins'),
+    path('instructions/',instructions,name ='ins'),
+    path('adminpage', adminpage, name='adminpage'),
+    path('adminprofile', admin_signin, name='adminprofile'),
     path('menu', menu,name='menu'),
     path('HealthAndCare', HealthAndCare,name='HealthAndCare'),
     path('Markets', Markets,name='Markets'),
@@ -61,7 +65,7 @@ urlpatterns = [
     path('logout/', logoutpage , name='logout'),
     path('increase/<int:blogId>/<int:pop>', increase , name='increase'),
     path('decrease/<int:blogId>/<int:pop>', decrease , name='decrease'),
-    path('decrease',decrease, name='decrease'),
-    path('To Use/', To_Use,name='To Use'),
 
+    # path('increase',increase, name='increase'),
+    path('decrease',decrease, name='decrease')
 ]

@@ -18,10 +18,19 @@ def contact_page(request):
 
 
 def instructions(request):
-    return render(request, "instructions.html", {"title": "instructions"})
+    return render(request, "instructions.html", {"title": "contact us"})
+
+
+def adminpage(request):
+    return render(request,"adminpage.html", {"title": "contact us"})
+
+
+def adminprofile(request):
+    return render(request,"adminprofile.html", {"title": "contact us"})
+
 
 def menu(request):
-    return render(request,"menu.html", {"title":"menu"})
+    return render(request,"menu.html", {"asd":"asd"})
 
 
 def HealthAndCare(request):
@@ -70,7 +79,4 @@ def decrease(request,blogId,pop):
     blogs = BlogPost.objects.all();
     return render(request,"home.html",{'blogs':blogs})
 
-
-def To_Use(request):
-    return render(request,"To_Use.html", {"title":"To_Use"})
 
