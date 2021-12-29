@@ -78,3 +78,5 @@ def decrease(request,blogId,pop):
     originalObj.save()
     blogs = BlogPost.objects.all();
     return render(request,"home.html",{'blogs':blogs})
+
+
