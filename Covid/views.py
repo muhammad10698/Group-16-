@@ -1,8 +1,16 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template.loader import get_template
 from blog.models import BlogPost
 from blog.views import blog_post_detail_view
+from blog.models import *
+
+
+from django.contrib.auth.models import User
+from django.contrib.sessions.models import Session
+from django.utils import timezone
+
+
 
 def home_page(request):
     blogs = BlogPost.objects.all();
@@ -49,6 +57,30 @@ def Markets(request):
 def Restaurants(request):
     blogs = BlogPost.objects.all();
     return render(request, "Restaurants.html", {'blogs':blogs})
+
+def UsersTable(request):
+    users=user.objects.all()
+    return render(request,"UsersTable.html",{'users':users})
+
+def DeleteUsers(request):
+    users=user.objects.all()
+    return render(request, "DeleteUsers.html", {'users': users})
+
+def places(request):
+    blogs = BlogPost.objects.all()
+    return render(request,"places.html",{'blogs':blogs})
+
+
+def delete_user(request,user_id):
+    users=user.objects.get(pk=user_id)
+    users.delete()
+    return redirect('DeleteUsers')
+
+
+def ShowRestaurants(request):
+    blogs = BlogPost.objects.all()
+    return render(request,"ShowRestaurants.html",{'blogs': blogs})
+
 
 
 def example_page(request):

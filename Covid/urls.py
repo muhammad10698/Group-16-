@@ -28,7 +28,8 @@ from blog.views import (
     Register,
     loginpage,
     logoutpage,
-    admin_signin
+    adminprofile
+
 )
 from.views import (
  home_page,
@@ -41,7 +42,12 @@ from.views import (
  menu,
  HealthAndCare,
  Markets,
- Restaurants
+ Restaurants,
+ UsersTable,
+ DeleteUsers,
+ places,
+ delete_user,
+ ShowRestaurants
 
 )
 
@@ -55,13 +61,20 @@ urlpatterns = [
     path('contact/', contact_page,name='contact'),
     path('instructions/',instructions,name ='ins'),
     path('adminpage', adminpage, name='adminpage'),
-    path('adminprofile', admin_signin, name='adminprofile'),
+    path('adminprofile', adminprofile, name='adminprofile'),
     path('menu', menu,name='menu'),
     path('HealthAndCare', HealthAndCare,name='HealthAndCare'),
     path('Markets', Markets,name='Markets'),
     path('Restaurants', Restaurants,name='Restaurants'),
     path('login/', loginpage , name='loginpage'),
     path('logout/', logoutpage , name='logout'),
+    path('UsersTable', UsersTable , name='UsersTable'),
+    path('DeleteUsers',DeleteUsers,name='DeleteUsers'),
+    path('places', places , name='places'),
+    path('delete_user/<user_id>',delete_user,name="delete_user"),
+    path('ShowRestaurants',ShowRestaurants,name='ShowRestaurants'),
+
+
 
 
 
