@@ -17,14 +17,13 @@ def blog_post_list_view(request):
     return render(request, template_name, context)
 
 
-def blog_post_create_view(request):  # create object using forms
+def blog_post_create_view(request):  
     template_name = 'blog_post_create.html'
     context = {'form': None}
     return render(request, template_name, context)
 
 
 def blog_post_detail_view(request, slug):
-    # 1 object-> detail view
     obj = get_object_or_404(BlogPost, slug=slug)
     template_name = 'blog_post_detail.html'
     context = {"object": obj}
@@ -81,4 +80,5 @@ def loginpage(request):
 def logoutpage(request):
     logout(request)
     return redirect('loginpage') 
+
 

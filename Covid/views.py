@@ -6,7 +6,6 @@ from blog.views import blog_post_detail_view
 
 def home_page(request):
     blogs = BlogPost.objects.all();
-
     return render(request, "home.html", {'blogs':blogs})
 
 
@@ -19,10 +18,10 @@ def contact_page(request):
 
 
 def instructions(request):
-    return render(request, "instructions.html", {"title": "contact us"})
+    return render(request, "instructions.html", {"title": "instructions"})
 
 def menu(request):
-    return render(request,"menu.html", {"asd":"asd"})
+    return render(request,"menu.html", {"title":"menu"})
 
 
 def HealthAndCare(request):
@@ -49,4 +48,29 @@ def example_page(request):
     rendered_item = template_obj.render(template_name)
     return HttpResponse(rendered_item) #render(request,"hello_world.html",{"title": "contact us"})
 
+
+def increase(request,blogId,pop):
+    originalObj = BlogPost.objects.get(id = blogId)
+    if originalObj.population == originalObj.capacity :
+        blogs = BlogPost.objects.all();
+        return render(request,"home.html",{'blogs':blogs})
+    else:    
+        originalObj.population = pop + 1
+        originalObj.save()
+        blogs = BlogPost.objects.all();
+        return render(request,"home.html",{'blogs':blogs})
+
+def decrease(request,blogId,pop):
+    originalObj = BlogPost.objects.get(id = blogId)
+    if originalObj.population == 0 :
+        blogs = BlogPost.objects.all();
+        return render(request,"home.html",{'blogs':blogs})
+    originalObj.population = pop - 1
+    originalObj.save()
+    blogs = BlogPost.objects.all();
+    return render(request,"home.html",{'blogs':blogs})
+
+
+def To_Use(request):
+    return render(request,"To_Use.html", {"title":"To_Use"})
 

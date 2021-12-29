@@ -63,6 +63,20 @@
         background-color:#B22222;
 
     }
+    .showmore{
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+            
+    }
+
 
 </style>
 {% endblock %}
@@ -76,15 +90,16 @@
         <div class="container">
             <h4><b>{{blog.title}}</b></h4> 
             <span>Description : </span>  <p>{{blog.content}}</p> 
+            <span>capacity : </span><h3><b>{{blog.capacity}}</b></h3> 
+
             <span>Population : </span><h3><b>{{blog.population}}</b></h3> 
             <span>Address : </span><h3><b>{{blog.address}}</b></h3> 
             <span>type : </span><h3><b>{{blog.type}}</b></h3> 
             
         </div>
-        <a href="#" class="btn btn-primary">Invitation Request </a> 
-        <a class="btn btn-sm btn-danger" href="#">Cancel Invitation </a></h3>
-
-    </div>
+        <a style="font-size: 15px;" href="{% url 'increase' blog.id blog.population  %}" ><button class="btn btn-primary">invitation</button></a>
+        <a style="font-size: 15px;" href="{% url 'decrease' blog.id blog.population  %}" ><button class="btn btn-danger">cancel invitation</button></a>
+</div>
     {% endif %}
 {% endfor %}
 </div>
