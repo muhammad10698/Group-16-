@@ -29,7 +29,10 @@ from blog.views import (
     loginpage,
     logoutpage
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 )
 from.views import (
  home_page,
@@ -60,23 +63,36 @@ urlpatterns = [
     path('about/', about_page,name='about'),
     path('contact/', contact_page,name='contact'),
     path('instructions/',instructions,name ='ins'),
+<<<<<<< Updated upstream
     path('adminpage/', adminpage ,name='adminpage'),
     path('adminprofile/', adminprofile ,name='adminprofile'),
+=======
+    path('adminpage/', adminpage, name='adminpage'),
+    path('adminprofile/', adminprofile, name='adminprofile'),
+>>>>>>> Stashed changes
     path('menu', menu,name='menu'),
     path('HealthAndCare', HealthAndCare,name='HealthAndCare'),
     path('Markets', Markets,name='Markets'),
     path('Restaurants', Restaurants,name='Restaurants'),
     path('login/', loginpage , name='loginpage'),
     path('logout/', logoutpage , name='logout'),
+<<<<<<< Updated upstream
+=======
+    path('increase/<int:blogId>/<int:pop>', increase , name='increase'),
+    path('decrease/<int:blogId>/<int:pop>', decrease , name='decrease'),
+>>>>>>> Stashed changes
     path('UsersTable', UsersTable , name='UsersTable'),
     path('DeleteUsers',DeleteUsers,name='DeleteUsers'),
     path('places', places , name='places'),
     path('delete_user/<user_id>',delete_user,name="delete_user"),
     path('ShowRestaurants',ShowRestaurants,name='ShowRestaurants'),
 
+<<<<<<< Updated upstream
 
 
 
 
+=======
+>>>>>>> Stashed changes
 
 ]
