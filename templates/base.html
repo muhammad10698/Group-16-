@@ -1,8 +1,10 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>covid</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -24,9 +26,12 @@
   
 
   <nav class="navbar navbar-default">
+      
+    </a>
+
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="{% url 'home' %}">App</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Covid</a>
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="{% url 'home' %}">Home</a></li>
@@ -36,7 +41,6 @@
           <li><a href="{% url 'adminpage' %}"> admin </a></li>
         <li><a href="{% url 'menu' %}"> menu </a></li>
         <li><a style="float:right;" href="{% url 'logout' %}" > Logout</a></li>
-        
       </ul>
     </div>
   </nav>
@@ -56,7 +60,7 @@
   </div>
 
   <div>
-    <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+    <button class="w3-button w3-white w3-large" onclick="w3_open()">&#9776;</button>
     <div >
       <h3>{% block title %}{% endblock %}</h3>
       <p>{% block content %}{% endblock %}</p>

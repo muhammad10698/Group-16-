@@ -83,24 +83,6 @@ def logoutpage(request):
     return redirect('loginpage')
 
 
-def adminprofile(request):
-    if request.user.is_superuser:
-        return HttpResponseRedirect(reverse('adminprofile'))
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        user = authenticate(request, username=username, password=password)
-
-        if user is not None:
-            adminprofile(request, user)
-            if request.user.is_superuser:
-                return HttpResponseRedirect(reverse('adminprofile'))
-            return redirect('home')
-        else:
-            messages.info(request, 'Username or password is incorrect')
-    template_name = 'adminpage.html'
-    return render(request, template_name)
 
 
 

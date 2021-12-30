@@ -27,8 +27,8 @@ from blog.views import (
     blog_post_delete_view,
     Register,
     loginpage,
-    logoutpage,
-    adminprofile
+    logoutpage
+
 
 )
 from.views import (
@@ -60,8 +60,8 @@ urlpatterns = [
     path('about/', about_page,name='about'),
     path('contact/', contact_page,name='contact'),
     path('instructions/',instructions,name ='ins'),
-    path('adminpage', adminpage, name='adminpage'),
-    path('adminprofile', adminprofile, name='adminprofile'),
+    path('adminpage/', adminpage ,name='adminpage'),
+    path('adminprofile/', adminprofile ,name='adminprofile'),
     path('menu', menu,name='menu'),
     path('HealthAndCare', HealthAndCare,name='HealthAndCare'),
     path('Markets', Markets,name='Markets'),

@@ -14,7 +14,6 @@ from django.utils import timezone
 
 def home_page(request):
     blogs = BlogPost.objects.all();
-
     return render(request, "home.html", {'blogs':blogs})
 
 
@@ -91,3 +90,23 @@ def example_page(request):
     return HttpResponse(rendered_item) #render(request,"hello_world.html",{"title": "contact us"})
 
 
+def increase(request,blogId,pop):
+    originalObj = BlogPost.objects.get(id = blogId)
+    if originalObj.population == originalObj.capacity :
+        blogs = BlogPost.objects.all();
+        return render(request,"home.html",{'blogs':blogs})
+    else:    
+        originalObj.population = pop + 1
+        originalObj.save()
+        blogs = BlogPost.objects.all();
+        return render(request,"home.html",{'blogs':blogs})
+
+def decrease(request,blogId,pop):
+    originalObj = BlogPost.objects.get(id = blogId)
+    if originalObj.population == 0 :
+        blogs = BlogPost.objects.all();
+        return render(request,"home.html",{'blogs':blogs})
+    originalObj.population = pop - 1
+    originalObj.save()
+    blogs = BlogPost.objects.all();
+    return render(request,"home.html",{'blogs':blogs})

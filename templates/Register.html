@@ -2,26 +2,27 @@
 {% block style %}
     {% load static %}
     <style>
-
-
         .sidenav{
-            padding: 8px 100px 8px 100px;
+         font-size: 25px;
+         color: #FF7F50;
+        }
+
+        .main {
+            text-align: center; 
+            border: 100px  #FFFF00;
+            display: flex;
+            height: 50%;
+            align-items: 50%;
             font-size: 25px;
             color: #FF7F50;
-            background-color: #DBF9FC;
+            text-align: center;  
+        }
+        .content{
+            max-width: 900px;
             margin: auto;
-            display: block;
-
         }
-        .main {
-            background-color: #DBF9FC;
-            text-align: center;
-         
-            
           
-        }
-                      
-    
+
     </style>
 <button class="btn btn-primary" onclick="history.back()">Go Back</button>
 {% endblock %}
@@ -29,6 +30,10 @@
 
 {% block content %}
 <!DOCTYPE html>
+<body>
+
+  <div class="content">
+    
     <html lang="en">
         <head>
             <meta charset="UTF-8">
@@ -47,10 +52,10 @@
                 <div class="login-main-text">
                     <h1></h1>
                     <h3>Register Page</h3>
-                <p>Register from here to access.</p>
+                    <p>Register from here to access.</p>
                 </div>
             </div>
-            <div class="main">
+            <div class="main"> 
                 <div class="col-md-6 col-sm-12">
                 <div class="login-form">
                     <form method="POST" action="">
@@ -60,17 +65,22 @@
                             <div style="padding: 0; margin: 0;">{{ field.label_tag }}</div>
                             <div style="margin: 0 0 20px 0; ">{{ field }}</div><span style="color: #7FFFD4;">{{ field.errors }}</span>
                         {% endfor %}
-                        <div style="display: inline-block;">
+                        <div style="display: inline-block; ">
                             <button type="submit" class="btn btn-secondary">Register</button>
                         </div>
-                        <div style="float: right;">
+                        <div style="float: center;">
                             Already Signed up?<a href="{% url 'loginpage' %}"  >Login</a>
                         </div>
                     </form>
                     
                 </div>
-                </div>
+                
             </div>
         </body>
     </html>
+</div>
+
+</body>
+
+    
 {%endblock%}
