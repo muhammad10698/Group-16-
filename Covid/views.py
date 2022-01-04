@@ -116,3 +116,7 @@ def delete_user(request,user_id):
 def ShowRestaurants(request):
     blogs = BlogPost.objects.all()
     return render(request,"ShowRestaurants.html",{'blogs': blogs})
+
+def places(request):
+    blogs = BlogPost.objects.all()
+    return render(request,"places.html",{'blogs':blogs})

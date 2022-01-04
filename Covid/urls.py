@@ -46,7 +46,8 @@ from.views import (
  adminprofile,
  DeleteUsers,
  delete_user,
- ShowRestaurants
+ ShowRestaurants,
+ places,
 
 )
 
@@ -75,5 +76,5 @@ urlpatterns = [
     path('DeleteUsers', DeleteUsers, name='DeleteUsers'),
     path('delete_user/<user_id>',delete_user,name="delete_user"),
     path('ShowRestaurants', ShowRestaurants, name='ShowRestaurants'),
-
+    path('places', places , name='places'),
 ]
