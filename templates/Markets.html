@@ -97,10 +97,9 @@
             <span>type : </span><h3><b>{{blog.type}}</b></h3> 
             
         </div>
-        <button type="blog.population" class="btn btn-primary">Invitation Request</button>
-        <button type="blog.population" class="btn btn-danger">Cancel Invitation</button>
-        <button type="profile"class="showmore">view more</button>
-    </div>
+        <a style="font-size: 15px;" href="{% url 'increase' blog.id blog.population  %}" ><button class="btn btn-primary">invitation</button></a>
+        <a style="font-size: 15px;" href="{% url 'decrease' blog.id blog.population  %}" ><button class="btn btn-danger">cancel invitation</button></a>
+</div>
     {% endif %}
 {% endfor %}
 </div>

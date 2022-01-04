@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
 
-from .views import home_page
+from .views import decrease, home_page, increase
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from blog.views import (
     blog_post_create_view,
     blog_post_detail_view,
@@ -27,12 +28,8 @@ from blog.views import (
     blog_post_delete_view,
     Register,
     loginpage,
-    logoutpage
-
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
+    logoutpage,
+    choose_register,
 )
 from.views import (
  home_page,
@@ -40,59 +37,37 @@ from.views import (
  contact_page,
  example_page,
  instructions,
- adminpage,
- adminprofile,
  menu,
  HealthAndCare,
  Markets,
  Restaurants,
- UsersTable,
- DeleteUsers,
- places,
- delete_user,
- ShowRestaurants
+ To_Use,
+ adminpage,
+ adminprofile,
 
 )
 
 urlpatterns = [
-    path('register/', Register , name='Register'),
     path('admin/', admin.site.urls),
     path('', home_page,name='home'),
     path('blog/', blog_post_list_view),
     path('blog/<str:slug>/', blog_post_detail_view),
     path('about/', about_page,name='about'),
     path('contact/', contact_page,name='contact'),
-    path('instructions/',instructions,name ='ins'),
-<<<<<<< Updated upstream
-    path('adminpage/', adminpage ,name='adminpage'),
-    path('adminprofile/', adminprofile ,name='adminprofile'),
-=======
-    path('adminpage/', adminpage, name='adminpage'),
-    path('adminprofile/', adminprofile, name='adminprofile'),
->>>>>>> Stashed changes
+    path('instructions',instructions,name ='ins'),
     path('menu', menu,name='menu'),
     path('HealthAndCare', HealthAndCare,name='HealthAndCare'),
     path('Markets', Markets,name='Markets'),
     path('Restaurants', Restaurants,name='Restaurants'),
+    path('register/', Register , name='Register'),
     path('login/', loginpage , name='loginpage'),
     path('logout/', logoutpage , name='logout'),
-<<<<<<< Updated upstream
-=======
     path('increase/<int:blogId>/<int:pop>', increase , name='increase'),
     path('decrease/<int:blogId>/<int:pop>', decrease , name='decrease'),
->>>>>>> Stashed changes
-    path('UsersTable', UsersTable , name='UsersTable'),
-    path('DeleteUsers',DeleteUsers,name='DeleteUsers'),
-    path('places', places , name='places'),
-    path('delete_user/<user_id>',delete_user,name="delete_user"),
-    path('ShowRestaurants',ShowRestaurants,name='ShowRestaurants'),
-
-<<<<<<< Updated upstream
-
-
-
-
-=======
->>>>>>> Stashed changes
+    path('decrease',decrease, name='decrease'),
+    path('To Use/', To_Use,name='To Use'),
+    path('adminpage/', adminpage, name='adminpage'),
+    path('adminprofile/', adminprofile, name='adminprofile'),
+    path('choose_register/', choose_register , name='choose_register'),
 
 ]

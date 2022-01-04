@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'Covid',
+    'Contact'
+
 ]
 
 
@@ -134,6 +136,5 @@ STATICFILES_DIRS=(
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-#adminpage_REDIRECT_URL='adminpage'
-
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
