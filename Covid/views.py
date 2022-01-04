@@ -120,3 +120,7 @@ def ShowRestaurants(request):
 def places(request):
     blogs = BlogPost.objects.all()
     return render(request,"places.html",{'blogs':blogs})
+
+def UsersTable(request):
+    users=user.objects.all()
+    return render(request,"UsersTable.html",{'users':users})

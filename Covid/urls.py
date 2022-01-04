@@ -48,6 +48,7 @@ from.views import (
  delete_user,
  ShowRestaurants,
  places,
+ UsersTable,
 
 )
 
@@ -77,4 +78,6 @@ urlpatterns = [
     path('delete_user/<user_id>',delete_user,name="delete_user"),
     path('ShowRestaurants', ShowRestaurants, name='ShowRestaurants'),
     path('places', places , name='places'),
+    path('UsersTable', UsersTable, name='UsersTable'),
+
 ]
