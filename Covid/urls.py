@@ -44,6 +44,8 @@ from.views import (
  To_Use,
  adminpage,
  adminprofile,
+ DeleteUsers,
+ delete_user
 
 )
 
@@ -69,5 +71,6 @@ urlpatterns = [
     path('adminpage/', adminpage, name='adminpage'),
     path('adminprofile/', adminprofile, name='adminprofile'),
     path('choose_register/', choose_register , name='choose_register'),
-
+    path('DeleteUsers', DeleteUsers, name='DeleteUsers'),
+    path('delete_user/<user_id>',delete_user,name="delete_user"),
 ]

@@ -102,3 +102,14 @@ def adminpage(request):
 
 def adminprofile(request):
     return render(request,"adminprofile.html")
+
+
+def DeleteUsers(request):
+    users=user.objects.all()
+    return render(request, "DeleteUsers.html", {'users': users})
+
+def delete_user(request,user_id):
+    users=user.objects.get(pk=user_id)
+    users.delete()
+    return redirect('DeleteUsers')
+
