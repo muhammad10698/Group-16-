@@ -45,7 +45,8 @@ from.views import (
  adminpage,
  adminprofile,
  DeleteUsers,
- delete_user
+ delete_user,
+ ShowRestaurants
 
 )
 
@@ -73,4 +74,6 @@ urlpatterns = [
     path('choose_register/', choose_register , name='choose_register'),
     path('DeleteUsers', DeleteUsers, name='DeleteUsers'),
     path('delete_user/<user_id>',delete_user,name="delete_user"),
+    path('ShowRestaurants', ShowRestaurants, name='ShowRestaurants'),
+
 ]

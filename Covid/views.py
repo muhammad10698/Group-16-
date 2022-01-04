@@ -113,3 +113,6 @@ def delete_user(request,user_id):
     users.delete()
     return redirect('DeleteUsers')
 
+def ShowRestaurants(request):
+    blogs = BlogPost.objects.all()
+    return render(request,"ShowRestaurants.html",{'blogs': blogs})
