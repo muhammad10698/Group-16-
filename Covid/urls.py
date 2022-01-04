@@ -66,7 +66,8 @@ urlpatterns = [
     path('decrease/<int:blogId>/<int:pop>', decrease , name='decrease'),
     path('decrease',decrease, name='decrease'),
     path('To Use/', To_Use,name='To Use'),
-    path('adminpage', adminpage, name='adminpage'),
+    path('adminpage/', adminpage, name='adminpage'),
+    path('adminprofile/', adminprofile, name='adminprofile'),
     path('choose_register/', choose_register , name='choose_register'),
 
 ]

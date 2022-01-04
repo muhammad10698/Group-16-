@@ -1,9 +1,17 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import get_template
 from blog.models import BlogPost
 from blog.views import blog_post_detail_view
-
+from blog.models import *
+from django.contrib import messages
+from django.contrib.auth import authenticate,login, logout
+from django.contrib.auth.models import User
+from django.contrib.sessions.models import Session
+from django.utils import timezone
+from django.http.response import HttpResponseRedirect
+from django.urls import reverse
+from django.http import JsonResponse
 def home_page(request):
     blogs = BlogPost.objects.all();
     return render(request, "home.html", {'blogs':blogs})
@@ -75,8 +83,22 @@ def To_Use(request):
     return render(request,"To_Use.html", {"title":"To_Use"})
 
 def adminpage(request):
-    return render(request, "adminpage.html", {"title": "contact us"})
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            if request.user.is_superuser:
+                return HttpResponseRedirect(reverse('adminprofile'))
+            messages.info(request, 'You are not admin')
+        else:
+            messages.info(request, 'Username or password is incorrect')
+    return render(request,"adminpage.html")
+
 
 
 def adminprofile(request):
-    return render(request, "adminprofile.html", {"title": "contact us"})
+    return render(request,"adminprofile.html")
