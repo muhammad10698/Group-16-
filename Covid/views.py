@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import get_template
 from blog.models import BlogPost
+from account.models import Profile
 from blog.views import blog_post_detail_view
 from blog.models import *
 from django.contrib import messages
@@ -80,7 +81,7 @@ def decrease(request,blogId,pop):
 
 
 def To_Use(request):
-    return render(request,"To_Use.html", {"title":"To_Use"})
+    return render(request,"To_Use.html", {"title": "To_Use"})
 
 def adminpage(request):
     if request.method == 'POST':
@@ -124,3 +125,10 @@ def places(request):
 def UsersTable(request):
     users=user.objects.all()
     return render(request,"UsersTable.html",{'users':users})
+
+def about_place(request):
+    profile = Profile.objects.all()
+    return render(request,"about_place.html",{'profile': profile})
+def rules_place(request):
+    profile = Profile.objects.all()
+    return render(request,"rules.html",{'profile': profile})

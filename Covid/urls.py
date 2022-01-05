@@ -49,6 +49,8 @@ from.views import (
  ShowRestaurants,
  places,
  UsersTable,
+about_place,
+rules_place,
 
 )
 
@@ -69,8 +71,9 @@ urlpatterns = [
     path('logout/', logoutpage , name='logout'),
     path('increase/<int:blogId>/<int:pop>', increase , name='increase'),
     path('decrease/<int:blogId>/<int:pop>', decrease , name='decrease'),
+
     path('decrease',decrease, name='decrease'),
-    path('To Use/', To_Use,name='To Use'),
+    path('To_Use', To_Use, name='To_Use'),
     path('adminpage/', adminpage, name='adminpage'),
     path('adminprofile/', adminprofile, name='adminprofile'),
     path('choose_register/', choose_register , name='choose_register'),
@@ -79,5 +82,8 @@ urlpatterns = [
     path('ShowRestaurants', ShowRestaurants, name='ShowRestaurants'),
     path('places', places , name='places'),
     path('UsersTable', UsersTable, name='UsersTable'),
-
+    path('contact/', include('Contact.urls')),
+    path('account/', include('account.urls')),
+    path('about_place', about_place , name='about_place'),
+    path('rules', rules_place , name='rules'),
 ]
