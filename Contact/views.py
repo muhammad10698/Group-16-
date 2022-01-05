@@ -11,7 +11,9 @@ def contact(request):
         name = request.POST.get('name')
         subject = request.POST.get('subject')
         email = request.POST.get('email')
+        business_owner = request.POST.get('business_owner')
         message = request.POST.get('message')
+
         if name == '':
             blogs = BlogPost.objects.all()
             return render(request, "home.html", {'blogs': blogs})
@@ -19,6 +21,7 @@ def contact(request):
             contact.name = name
             contact.email = email
             contact.subject = subject
+            contact.business_owner = business_owner
             contact.message = message
             contact.save()
     return render(request, 'contact.html')

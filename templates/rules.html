@@ -1,36 +1,54 @@
 {% extends "base.html" %}
+
+
+{% block title %}{% endblock %}
+{% block style %}
+
+
+  <style>
+
+ .style{
+       position: absolute;
+       top: 35%;
+       left: 30%;
+       hight : 100%
+       width: 100%;
+       border: 2px  solid grey;
+       border-radius: 8px;
+       padding: 5px;
+       box-shadow: 10px 10px 5px #aaaaaa;
+       background-color: light grey;
+
+
+      }
+
+h3{
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 30px;
+  font-style: normal;
+  margin-bottom: 10px;
+  color: #486255;
+}
+
+
+  </style>
+{% endblock %}
+
+
 {% block content %}
 
-<html>
-<head>
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
+<div class="style">
+<h3> RULES ! </h3>
+<ul>
+  <li> It is mandatory to wear an oral mask and even </li>
 
-.title {
-  color: grey;
-  font-size: 18px;
-}
+     <li> Obligation to maintain hygiene </li>
+     <li> It is mandatory to maintain a distance of 2 meters </li>
+</ul>
 
 
-</style>
-</head>
-<body>
-<div class="card">
-<h2 style="text-align:center"> Rules </h2>
-<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-
-    <img class="rounded-circle account-img" style="width:100%" src="{{ user.profile.image.url }}">
-    <div class="media-body">
-        <h1 class="account-heading">{{ user.profile.rules}}</h1>
-    </div>
 </div>
-</div>
-</body>
-</html>
+
+
 {% endblock %}

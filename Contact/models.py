@@ -9,6 +9,7 @@ class Contact(models.Model):
     email = models.EmailField(max_length=50)
     subject = models.CharField(max_length=255)
     message = models.TextField()
+    business_owner = models.CharField(max_length=100)
 
     def __str__(self):
         return self.email

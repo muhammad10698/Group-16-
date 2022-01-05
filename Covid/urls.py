@@ -41,7 +41,7 @@ from.views import (
  HealthAndCare,
  Markets,
  Restaurants,
- To_Use,
+ #To_Use,
  adminpage,
  adminprofile,
  DeleteUsers,
@@ -49,8 +49,10 @@ from.views import (
  ShowRestaurants,
  places,
  UsersTable,
-about_place,
-rules_place,
+rules,
+Restaurants_about,
+Markets_about,
+HealthCare_about,
 
 )
 
@@ -71,9 +73,8 @@ urlpatterns = [
     path('logout/', logoutpage , name='logout'),
     path('increase/<int:blogId>/<int:pop>', increase , name='increase'),
     path('decrease/<int:blogId>/<int:pop>', decrease , name='decrease'),
-
     path('decrease',decrease, name='decrease'),
-    path('To_Use', To_Use, name='To_Use'),
+    #path('To Use/', To_Use,name='To Use'),
     path('adminpage/', adminpage, name='adminpage'),
     path('adminprofile/', adminprofile, name='adminprofile'),
     path('choose_register/', choose_register , name='choose_register'),
@@ -82,8 +83,8 @@ urlpatterns = [
     path('ShowRestaurants', ShowRestaurants, name='ShowRestaurants'),
     path('places', places , name='places'),
     path('UsersTable', UsersTable, name='UsersTable'),
-    path('contact/', include('Contact.urls')),
-    path('account/', include('account.urls')),
-    path('about_place', about_place , name='about_place'),
-    path('rules', rules_place , name='rules'),
+    path('rules/', rules, name='rules'),
+    path('Restaurants_about/', Restaurants_about, name ='Restaurants_about'),
+    path('HealthCare_about/', HealthCare_about, name ='HealthCare_about'),
+    path('Markets_about/', Markets_about, name ='Markets_about'),
 ]
