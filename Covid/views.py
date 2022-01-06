@@ -78,10 +78,10 @@ def decrease(request,blogId,pop):
     blogs = BlogPost.objects.all();
     return render(request,"home.html",{'blogs':blogs})
 
-"""
+
 def To_Use(request):
     return render(request,"To_Use.html", {"title":"To_Use"})
-"""
+
 def adminpage(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -124,11 +124,19 @@ def places(request):
 def UsersTable(request):
     users=user.objects.all()
     return render(request,"UsersTable.html",{'users':users})
+
 def rules(request):
     return render(request,"rules.html")
+
 def Restaurants_about(request):
     return render(request, "Restaurants_about.html")
+
 def HealthCare_about(request):
     return render(request, "HealthCare_about.html")
+
 def Markets_about(request):
     return render(request, "Markets_about.html")
+
+def ShowMarkets(request):
+    blogs = BlogPost.objects.all()
+    return render(request,"ShowMarkets.html",{'blogs': blogs})

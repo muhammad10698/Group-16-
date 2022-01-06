@@ -41,7 +41,7 @@ from.views import (
  HealthAndCare,
  Markets,
  Restaurants,
- #To_Use,
+ To_Use,
  adminpage,
  adminprofile,
  DeleteUsers,
@@ -49,10 +49,11 @@ from.views import (
  ShowRestaurants,
  places,
  UsersTable,
-rules,
-Restaurants_about,
-Markets_about,
-HealthCare_about,
+ rules,
+ Restaurants_about,
+ Markets_about,
+ HealthCare_about,
+ ShowMarkets,
 
 )
 
@@ -74,7 +75,7 @@ urlpatterns = [
     path('increase/<int:blogId>/<int:pop>', increase , name='increase'),
     path('decrease/<int:blogId>/<int:pop>', decrease , name='decrease'),
     path('decrease',decrease, name='decrease'),
-    #path('To Use/', To_Use,name='To Use'),
+    path('To_Use/', To_Use,name='To_Use'),
     path('adminpage/', adminpage, name='adminpage'),
     path('adminprofile/', adminprofile, name='adminprofile'),
     path('choose_register/', choose_register , name='choose_register'),
@@ -87,4 +88,5 @@ urlpatterns = [
     path('Restaurants_about/', Restaurants_about, name ='Restaurants_about'),
     path('HealthCare_about/', HealthCare_about, name ='HealthCare_about'),
     path('Markets_about/', Markets_about, name ='Markets_about'),
+    path('ShowMarkets', ShowMarkets, name='ShowMarkets'),
 ]
